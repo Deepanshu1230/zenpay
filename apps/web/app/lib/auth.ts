@@ -102,5 +102,10 @@ providers:[
   })
         
     ],
+
+     pages: {
+    signIn: "/signup",  
+    error: "/signup",    
+  },
     secret:process.env.NEXTAUTH_SECRET
 }

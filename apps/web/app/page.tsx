@@ -1,13 +1,19 @@
-import { prisma } from "@repo/db";
+"use client"
 
-export default async function Page() {
-  // Try to fetch users. If this doesn't crash, your DB is connected!
-  // const users = await prisma.user.findMany();
+import { prisma } from "@repo/db";
+import { useSession } from "next-auth/react";
+
+export default function Page() {
+    const user=useSession();
+    if(!user){
+      return;
+    }
 
   return (
-    <div>
+    <div className="bg-blue-700 w-full h-9 flex flex-row text-blue-500 font-semibold text-3xl">
       hello ji
-      {/* <pre>{JSON.stringify(users, null, 2)}</pre> */}
+      <div>My name is Deepanshu</div>
+      <pre>{JSON.stringify(user.data)}</pre>
     </div>
   );
 }
