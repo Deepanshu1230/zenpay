@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export const Signup = () => {
   const router=useRouter();
@@ -123,7 +124,13 @@ export const Signup = () => {
 
           {/* last text  */}
           <div className="mt-4 text-white/25">
-            Already have an account? <span className="underline font-medium text-white cursor-pointer ">Login</span>
+            Already have an account? 
+            <Link rel="stylesheet" href="/login" >
+            <span className="underline font-medium text-white cursor-pointer ">
+              Login
+            </span>
+            </Link>
+            
           </div>
         </div>
       </div>

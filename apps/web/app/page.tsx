@@ -1,5 +1,5 @@
 "use client"
-
+import ZenpayLanding from "../components/Landing";
 import { prisma } from "@repo/db";
 import { useSession } from "next-auth/react";
 
@@ -10,10 +10,9 @@ export default function Page() {
     }
 
   return (
-    <div className="bg-blue-700 w-full h-9 flex flex-row text-blue-500 font-semibold text-3xl">
-      hello ji
-      <div>My name is Deepanshu</div>
-      <pre>{JSON.stringify(user.data)}</pre>
+    <div >
+      <ZenpayLanding/>
+     
     </div>
   );
 }
